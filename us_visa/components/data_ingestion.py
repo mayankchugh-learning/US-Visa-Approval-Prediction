@@ -62,7 +62,7 @@ class DataIngestion:
             )
             dir_path = os.path.dirname(self.data_ingestion_config.training_file_path)
             os.makedirs(dir_path,exist_ok=True)
-
+            
             logging.info(f"Exporting train and test file path.")
             train_set.to_csv(self.data_ingestion_config.training_file_path,index=False,header=True)
             test_set.to_csv(self.data_ingestion_config.testing_file_path,index=False,header=True)
@@ -96,7 +96,7 @@ class DataIngestion:
 
             data_ingestion_artifact = DataIngestionArtifact(trained_file_path=self.data_ingestion_config.training_file_path,
             test_file_path=self.data_ingestion_config.testing_file_path)
-
+            
             logging.info(f"Data ingestion artifact: {data_ingestion_artifact}")
             return data_ingestion_artifact
         except Exception as e:
