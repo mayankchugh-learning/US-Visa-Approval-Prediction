@@ -1,13 +1,16 @@
 # US-Visa-Approval-Prediction
 
-## Live matarials docs
+# Live matarials docs
 
 [link](https://docs.google.com/document/d/1UFiHnyKRqgx8Lodsvdzu58LbVjdWHNf-uab2WmhE0A4/edit?usp=sharing)
 
 
 ## Git commands
 
+
 ```bash
+
+
 git add .
 
 git commit -m "Updated"
@@ -43,7 +46,6 @@ pip install -r requirements.txt
 
 ### Export the  environment variable
 ```bash
-
 
 export MONGODB_URL="mongodb+srv://<username>:<password>...."
 

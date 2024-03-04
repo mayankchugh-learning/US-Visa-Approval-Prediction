@@ -11,9 +11,17 @@ from us_visa.logger import logging
 from us_visa.data_access.usvisa_data import USvisaData
 
 class DataIngestion:
+    """
+    This class is responsible for exporting data from MongoDB and splitting the data into train and test sets.
+    """
     def __init__(self,data_ingestion_config:DataIngestionConfig=DataIngestionConfig()):
         """
-        :param data_ingestion_config: configuration for data ingestion
+        Initialize the DataIngestion class.
+
+        Args:
+            data_ingestion_config (DataIngestionConfig): The configuration for data ingestion.
+        
+            :param data_ingestion_config: configuration for data ingestion
         """
         try:
             self.data_ingestion_config = data_ingestion_config
@@ -22,11 +30,12 @@ class DataIngestion:
 
     def export_data_into_feature_store(self)->DataFrame:
         """
-        Method Name :   export_data_into_feature_store
-        Description :   This method exports data from mongodb to csv file
-        
-        Output      :   data is returned as artifact of data ingestion components
-        On Failure  :   Write an exception log and then raise an exception
+        Method Name     :   export_data_into_feature_store
+        Description     :   This method exports data from mongodb to csv file
+
+        Returns/Output  :   data is returned as artifact of data ingestion components
+                            DataFrame: The data from MongoDB
+        On Failure      :   Write an exception log and then raise an exception
         """
         try:
             logging.info(f"Exporting data from mongodb")
@@ -48,8 +57,8 @@ class DataIngestion:
         """
         Method Name :   split_data_as_train_test
         Description :   This method splits the dataframe into train set and test set based on split ratio 
-        
-        Output      :   Folder is created in s3 bucket
+                        Split the data frame into train and test sets based on the split ratio.
+        Output      :   Folder will be created in AWS:S3 bucket
         On Failure  :   Write an exception log and then raise an exception
         """
         logging.info("Entered split_data_as_train_test method of Data_Ingestion class")
