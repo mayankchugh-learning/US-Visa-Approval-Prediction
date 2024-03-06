@@ -15,7 +15,7 @@ class TargetValueMapping:
     def reverse_mapping(self):
         mapping_response = self._asdict()
         return dict(zip(mapping_response.values(),mapping_response.keys()))
-
+    
 
 
 
