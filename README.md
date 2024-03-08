@@ -1,5 +1,10 @@
 **US Visa Approval Prediction**
 
+**YouTube URL for Deployment https://youtu.be/p81ouOZVDTs**
+**LinkedIn: https://www.linkedin.com/in/mchugh77/**
+
+
+
 **🔍 Description for US Visa Approval Prediction for Machine Learning Model - MLOps Project:**
 
 The US Visa Approval Prediction project aims to develop a machine learning model that can accurately predict the approval or rejection of US visa applications. This project adopts a modular coding approach, leveraging various technologies to build an end-to-end solution. The primary technologies used in this project include:
@@ -79,6 +84,8 @@ export AWS_SECRET_ACCESS_KEY = <AWS_SECRET_ACCESS_KEY>
 export AWS_DEFAULT_REGION = <AWS_DEFAULT_REGION>
 
 ```
+
+
 
 # AWS-CICD-Deployment-with-Github-Actions
 
