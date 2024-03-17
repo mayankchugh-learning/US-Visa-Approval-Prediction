@@ -25,6 +25,16 @@ The US Visa Approval Prediction project aims to develop a machine learning model
 
 **☁️ AWS S3:**  AWS S3 (Simple Storage Service) is utilized for storing and managing the dataset and other project-related files. It provides secure and scalable cloud storage for easy accessibility and data sharing.
 
+📦 AWS Elastic Container Registry (ECR): AWS ECR is a fully managed container registry that makes it easy to store, manage, and deploy Docker container images. By utilizing ECR, you can securely store your machine learning model's containerized image and easily deploy it to AWS services such as AWS Elastic Compute Cloud (EC2).
+
+⚙️ AWS Elastic Compute Cloud (EC2): AWS EC2 provides scalable virtual servers in the cloud. You can launch EC2 instances with the desired configuration, including the operating system (e.g., Ubuntu), and deploy your machine learning model on these instances. EC2 offers flexibility and scalability for running the prediction model and handling varying workloads.
+
+🔒 AWS Identity and Access Management (IAM): AWS IAM enables you to manage access to AWS services and resources securely. By configuring IAM roles and policies, you can control and grant appropriate permissions to different project team members, ensuring secure access to AWS resources.
+
+🏃 GitHub Action Runner: GitHub Actions is a powerful automation and workflow tool that integrates with GitHub repositories. GitHub Action Runner allows you to execute workflows and automate tasks directly on your own infrastructure. By setting up a GitHub Action Runner on an EC2 instance, you can automate tasks like model training, deployment, and testing.
+
+🐧 Ubuntu: Ubuntu is a popular Linux distribution known for its ease of use and extensive community support. It provides a reliable and stable operating system environment for hosting your project's infrastructure, such as EC2 instances or GitHub Action Runners.
+
 By combining these technologies, the US Visa Approval Prediction project aims to develop a reliable and efficient machine learning model that can assist in predicting the outcome of US visa applications, streamlining the visa approval process, and improving decision-making.
 
 
