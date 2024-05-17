@@ -38,7 +38,7 @@ docker ps -a
 docker exec -it <container_id> /bin/bash
 ```
 
-docker exec -it 79b66025a95f /bin/bash
+docker exec -it 46faaa72e730 /bin/bash
 
 ## update container
 ```bash
@@ -49,10 +49,8 @@ apt-get upgrade -y
 ```
 
 ```bash
-apt-get install curl -y
-apt-get install unzip -y
+apt-get install curl unzip -y
 ```
-
 
 ## install aws cli 
 
@@ -73,6 +71,9 @@ aws --version
 ```bash
 aws configure
 ```
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=/9fmfoI3U
+AWS_DEFAULT_REGION=us-east-1
 
 ## Since model upload after training and application will download model from s3, hence we need to configure
 ```bash
@@ -80,10 +81,18 @@ AWS_ACCESS_KEY_ID=<your-access-key>
 AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
 AWS_DEFAULT_REGION=us-east-1
 ```
+```bash
+export MONGODB_URL="mongodb+srv://mayankchughlearning:z4E32JwhsC12LQTK@cluster0.oa9kol7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+```
+```bash
+export AWS_ACCESS_KEY_ID=""
+
+export AWS_SECRET_ACCESS_KEY=""
+
+export AWS_DEFAULT_REGION="us-east-1"
+
 ## install python      
 ```bash
-apt-get install python3
-apt-get install python3.12-venv
 apt-get install python3-full -y
 ```
 
@@ -93,44 +102,28 @@ apt-get install pip -y
 ```
 
 ```bash
-apt-get install libgl1-mesa-glx -y
 apt-get install mesa-utils -y
 ```
 
-## install git
+## install git nano vim
 ```bash
 apt-get install git -y
-```
-
-## install nano
-```bash
-apt-get install nano
-```
-
-## install vi
-```bash
-apt-get install vim
-```
-
-## install unzip
-```bash
-apt-get install unzip
+apt-get install nano -y
+apt-get install vim -y
 ```
 
 ## git clone
 ```bash
-git clone https://github.com/mayankchugh-learning/End-to-end-Object-Detection-Project.git
+git clone https://github.com/mayankchugh-learning/US-Visa-Approval-Prediction.git
 ```
 
 ## change directory to clonned repository
 ```bash
-cd End-to-end-Object-Detection-Project
+cd US-Visa-Approval-Prediction
 ```
 ```bash
-python3 -m venv .
 python3 -m venv path/to/venv
 source path/to/venv/bin/activate
-pip install -r requirements.txt
 ```
 ## install all requirement - Note: you may need to comment line with notebook  
 ```bash
@@ -147,25 +140,51 @@ aws --version
 docker ps -a
 docker exec -it <container_id> /bin/bash
 ```
-docker exec -it c54efff4244e /bin/bash
+docker exec -it 46faaa72e730 /bin/bash
 
 ## execute application
 ```bash
 python3 app.py
 ```
-## Note: you may need to create folder structure inside yolo5 folder - runs/detect/exp and then copy 
+
+## to list all containers 
 ```bash
-cd yolov5
-mkdir runs
-cd runs
-mkdir detect
-cd detect
-mkdir exp
-cd exp
-# inside End-to-end-Object-Detection-Project
-cd data
-cp inputImage.jpg ../yolov5/runs/detect/exp/ 
+docker ps -a
 ```
+
+## to go into docker conatiner - Skip this step
+```bash
+docker exec -it <container_id> /bin/bash
+```
+
+### Exit Docker Container without Stopping It
+- If you want to exit the container's interactive shell session, but do not want to interrupt the processes running in it, press Ctrl+P followed by Ctrl+Q. This operation detaches the container and allows you to return to your system's shell
+
+```bash
+docker commit <container_id>
+```
+docker commit 46faaa72e730 mayankchughjob/end-to-end-usvisa-prediction-mlmodel
+
+```bash
+docker image tag <image_id> <dockerhubid>/<name on dockerhub>:latest
+```
+docker image tag 8a5162116265 mayankchughjob/end-to-end-object-detection:latest
+
+```bash
+docker push <image id>
+```
+docker push mayankchughjob/end-to-end-usvisa-prediction-mlmodel 
+
+#### Commands to pull image from docker hub and run it locally
+
+```bash
+docker pull mayankchughjob/end-to-end-usvisa-prediction-mlmodel:latest
+```
+
+```bash
+docker run -dit -p 8080:8080 mayankchughjob/end-to-end-usvisa-prediction-mlmodel /bin/bash
+```
+
 ## to list all containers 
 ```bash
 docker ps -a
@@ -175,7 +194,16 @@ docker ps -a
 ```bash
 docker exec -it <container_id> /bin/bash
 ```
-
+docker exec -it 582ca9056a26 /bin/bash
+```bash
+cd End-to-end-Object-Detection-Project/
+```
+```bash 
+source path/to/venv/bin/activate
+```
+```bash 
+python3 app.py
+```
 
 # docker image
 
@@ -242,53 +270,6 @@ docker restart <container_id>  #8f1a99a79b3d
 ```bash
 docker exec -it <container_id> /bin/bash
 # docker exec -it 8f1a99a79b3d /bin/bash
-```
-```bash 
-source path/to/venv/bin/activate
-```
-```bash 
-python3 app.py
-```
-### Exit Docker Container without Stopping It
-- If you want to exit the container's interactive shell session, but do not want to interrupt the processes running in it, press Ctrl+P followed by Ctrl+Q. This operation detaches the container and allows you to return to your system's shell
-
-```bash
-docker commit <container_id>
-```
-docker commit c54efff4244e
-
-```bash
-docker image tag <image_id> <dockerhubid>/<name on dockerhub>:latest
-```
-docker image tag 8a5162116265 mayankchughjob/end-to-end-object-detection:latest
-
-```bash
-docker push <image id>
-```
-docker push mayankchughjob/end-to-end-object-detection:latest
-
-#### Commands to pull image from docker hub and run it locally
-
-```bash
-docker pull mayankchughjob/end-to-end-object-detection:latest
-```
-
-```bash
-docker run -dit -p 8080:8080 mayankchughjob/end-to-end-object-detection /bin/bash
-```
-
-## to list all containers 
-```bash
-docker ps -a
-```
-
-## to go into docker conatiner 
-```bash
-docker exec -it <container_id> /bin/bash
-```
-docker exec -it 582ca9056a26 /bin/bash
-```bash
-cd End-to-end-Object-Detection-Project/
 ```
 ```bash 
 source path/to/venv/bin/activate
